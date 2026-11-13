@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guia e Simulação Prática: Criar Ordem de Pagamento no Transferegov.br">
+  <title>Criar Ordem de Pagamento (OPP) | Mentor Transferegov.br</title>
+
+  <!-- Bootstrap 5 CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Icons via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Estilos Customizados: Foco no Simulador & Spotlight Direcional -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Link de Acessibilidade -->
+  <a href="#conteudo-simulador" class="skip-link">Pular direto para a prática</a>
+
+  <!-- Barra Institucional Gov.br -->
+  <div class="gov-topbar py-1 px-3 d-flex justify-content-between align-items-center">
+    <div>
+      <span class="fw-bold me-2">BRASIL</span>
+      <span class="text-white-50">| Ministério da Gestão e da Inovação em Serviços Públicos</span>
+    </div>
+    <div class="d-flex gap-3">
+      <a href="index.html"><i class="bi bi-grid-3x3-gap-fill me-1"></i>O que você quer fazer?</a>
+      <a href="https://www.gov.br/transferegov/pt-br" target="_blank" rel="noopener noreferrer" class="badge bg-warning text-dark text-decoration-none">
+        <i class="bi bi-box-arrow-up-right me-1"></i>Portal Transferegov.br
+      </a>
+    </div>
+  </div>
+
+  <!-- Cabeçalho Limpo -->
+  <header class="portal-header py-3 px-3" role="banner">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+        <div>
+          <nav aria-label="Navegação rápida" class="mb-1">
+            <ol class="breadcrumb mb-0 small text-white-50">
+              <li class="breadcrumb-item"><a href="index.html" class="text-white text-decoration-none">Início</a></li>
+              <li class="breadcrumb-item active text-white fw-bold" aria-current="page">Criar Ordem de Pagamento</li>
+            </ol>
+          </nav>
+          <h1 class="h3 fw-bold mb-0 text-white">Criar Ordem de Pagamento (Pix Agência e Conta)</h1>
+        </div>
+        <div>
+          <a href="index.html" class="btn btn-outline-light btn-sm fw-semibold">
+            <i class="bi bi-arrow-left me-1"></i> Mudar de Tarefa
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ALERTA DO PRAZO DAS 20H00 (VISÍVEL EM TODAS AS ETAPAS) -->
+  <aside class="container my-3" aria-label="Aviso de Prazo Bancário">
+    <div class="critical-deadline-banner d-flex align-items-center justify-content-between flex-wrap gap-2">
+      <div class="d-flex align-items-center gap-2">
+        <span class="critical-deadline-badge"><i class="bi bi-clock-fill"></i> ATENÇÃO: ATÉ AS 20H00</span>
+        <span class="fw-semibold">Depois de autorizar no Transferegov, o Ordenador precisa confirmar no banco até as 20h00.</span>
+      </div>
+      <span class="badge bg-white text-dark border">Gov.br Nível OURO</span>
+    </div>
+  </aside>
+
+  <main id="conteudo-simulador" class="container py-2 mb-4" role="main">
+
+    <!-- ====================================================================
+         SIMULADOR PRÁTICO COM SPOTLIGHT DIRECIONAL (FOCO TOTAL NA AÇÃO)
+         O restante da tela é escurecido para guiar a atenção do usuário
+         ==================================================================== -->
+    <section class="card content-card mb-4" aria-labelledby="simuladorHeading">
+      <div class="card-header bg-white border-bottom py-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
+        <div>
+          <h2 id="simuladorHeading" class="h5 fw-bold text-primary mb-0">
+            <i class="bi bi-laptop text-primary me-2"></i>
+            Simulador Guiado: Pratique Antes de Fazer no Sistema Real
+          </h2>
+          <small class="text-muted">A tela foca automaticamente onde você deve clicar agora. Siga o ponto amarelo iluminado.</small>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button id="btnPrevStep" class="btn btn-sm btn-outline-secondary" type="button" disabled aria-label="Retornar ao passo anterior">
+            <i class="bi bi-arrow-left me-1"></i> Voltar Passo
+          </button>
+          <button id="btnRestartSimulation" class="btn btn-sm btn-outline-primary" type="button" aria-label="Reiniciar simulação">
+            <i class="bi bi-arrow-clockwise me-1"></i> Recomeçar
+          </button>
+        </div>
+      </div>
+
+      <div class="card-body p-0">
+        
+        <!-- MOLDURA EXTERNA DO SIMULADOR -->
+        <div class="simulator-wrapper">
+
+          <!-- Barra do Navegador Simulado -->
+          <div class="simulator-window-bar">
+            <div class="window-dots" aria-hidden="true">
+              <span class="window-dot dot-red"></span>
+              <span class="window-dot dot-yellow"></span>
+              <span class="window-dot dot-green"></span>
+            </div>
+            <div class="window-title">https://transferegov.sistema.gov.br/gestaodeparcerias/opp</div>
+            <div class="text-white-50 small"><i class="bi bi-shield-check text-warning me-1"></i>Ambiente Seguro Gov.br Ouro</div>
+          </div>
+
+          <!-- Barra Superior de Instrução Direta -->
+          <div class="instruction-panel" role="status" aria-live="polite">
+            <div class="d-flex align-items-center gap-3 flex-wrap">
+              <span id="instructionStepBadge" class="instruction-step-badge">Passo 1 de 6</span>
+              <p id="instructionText" class="instruction-text">
+                Carregando a sua ação...
+              </p>
+            </div>
+            <!-- Barra de Progresso Real -->
+            <div class="progress" style="width: 140px; height: 16px;" role="progressbar" aria-label="Progresso da simulação" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100">
+              <div id="simulatorProgressBar" class="progress-bar progress-bar-striped progress-bar-animated bg-warning text-dark fw-bold" style="width: 16%; font-size: 0.7rem;">16%</div>
+            </div>
+          </div>
+
+          <!-- VIEWPORT (16:9) COM SPOTLIGHT DIRECIONAL -->
+          <div id="simulatorViewport" class="simulator-viewport" tabindex="0" role="region" aria-label="Tela de simulação do Transferegov">
+            
+            <!-- Imagem da Tela Real do Transferegov -->
+            <img id="simulatorScreenImg" class="simulator-screen-img" src="" alt="Tela real do Transferegov">
+
+            <!-- Container onde o Spotlight (iluminação exclusiva) é renderizado -->
+            <div id="simulatorHotspots"></div>
+
+            <!-- Overlay de Sucesso -->
+            <div id="simulatorSuccessOverlay" class="simulator-overlay-success d-none" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+              <i class="bi bi-check-circle-fill text-success display-2 mb-3" aria-hidden="true"></i>
+              <h3 id="successTitle" class="h3 fw-bold text-white mb-2">Ordem Concluída no Transferegov!</h3>
+              <p class="lead text-white-50 max-w-600 mb-4">
+                Você criou a ordem e autorizou como Gestor e Ordenador. <strong>Agora lembre-se:</strong> o Ordenador precisa entrar no internet banking ou aplicativo do banco e autorizar o débito <strong>até as 20h00 de hoje</strong>.
+              </p>
+              <div class="d-flex gap-3 flex-wrap justify-content-center">
+                <a href="index.html" class="btn btn-primary btn-lg px-4">
+                  <i class="bi bi-card-checklist me-2"></i> Ver Outras Tarefas
+                </a>
+                <button type="button" class="btn btn-outline-light btn-lg px-4" onclick="document.getElementById('btnRestartSimulation').click()">
+                  <i class="bi bi-arrow-repeat me-2"></i> Praticar Novamente
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="card-footer bg-light py-3">
+        <div class="d-flex align-items-center justify-content-between text-muted small">
+          <span><i class="bi bi-mouse2 me-1"></i> O foco visual destaca onde agir. Clique na área iluminada ou aperte <kbd>Tab</kbd> + <kbd>Enter</kbd>.</span>
+          <span>DTPAR / MGI</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SEÇÃO COMPLEMENTAR: REGRAS E VÍDEO (CARGA INFORMACIONAL FILTRADA)
+         Exibida de forma recolhida para não disputar atenção com a prática
+         ==================================================================== -->
+    <div class="row g-3">
+      <!-- Coluna: 4 Passos Essenciais -->
+      <div class="col-md-6">
+        <div class="action-question-box h-100">
+          <div class="action-question-header">
+            <i class="bi bi-signpost-split-fill text-primary"></i> A ordem exata do processo
+          </div>
+          <div class="action-question-body">
+            <ol class="small mb-0 ps-3 text-secondary">
+              <li class="mb-2"><strong>1. Criar Ordem:</strong> Operador ou Gestor preenche o Pix e anexa a Nota Fiscal.</li>
+              <li class="mb-2"><strong>2. Autorizar GF:</strong> Gestor Financeiro confere e aprova no Transferegov.</li>
+              <li class="mb-2"><strong>3. Autorizar OD:</strong> Ordenador de Despesas aprova no Transferegov.</li>
+              <li class="mb-0 text-dark"><strong>4. No Banco (Até 20h):</strong> Ordenador confirma no App ou Internet Banking.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna: Requisitos Críticos -->
+      <div class="col-md-6">
+        <div class="action-question-box h-100">
+          <div class="action-question-header text-warning-emphasis bg-warning-subtle">
+            <i class="bi bi-shield-exclamation text-warning"></i> Regras que impedem o pagamento
+          </div>
+          <div class="action-question-body">
+            <ul class="small mb-0 ps-3 text-secondary">
+              <li class="mb-2"><strong>Conta Ouro:</strong> Quem não tiver Gov.br Ouro não consegue salvar nem aprovar.</li>
+              <li class="mb-2"><strong>Mesmo CPF Proibido:</strong> A mesma pessoa não pode ser Gestor Financeiro e Ordenador de Despesas da mesma parceria.</li>
+              <li class="mb-0"><strong>Banco do Brasil:</strong> A conta poupança anexa precisa estar aberta na agência do BB.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Rodapé Institucional -->
+  <footer class="portal-footer py-4 mt-auto" role="contentinfo">
+    <div class="container text-center text-md-start">
+      <div class="row align-items-center">
+        <div class="col-md-8 mb-3 mb-md-0">
+          <p class="fw-bold mb-1">Diretoria de Transferências e Parcerias da União (DTPAR)</p>
+          <p class="mb-0 small text-white-50">Ministério da Gestão e da Inovação em Serviços Públicos (MGI) • Fonte Oficial: <a href="https://www.gov.br/transferegov/pt-br" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-underline">Transferegov.br</a></p>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <span class="badge bg-secondary-subtle text-dark p-2">Mentor de Intenções • DTPAR</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

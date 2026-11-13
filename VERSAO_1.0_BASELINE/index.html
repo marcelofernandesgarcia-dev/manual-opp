@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal de Apoio Operacional ao Módulo de Ordens de Pagamento das Parcerias (OPP) - Transferegov.br">
+  <title>Mentor OPP | O que você quer fazer hoje? - DTPAR</title>
+
+  <!-- Bootstrap 5 CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Icons via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Estilos Customizados: Linguagem Simples & Spotlight -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Link de Acessibilidade -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Barra Institucional Gov.br -->
+  <div class="gov-topbar py-1 px-3 d-flex justify-content-between align-items-center">
+    <div>
+      <span class="fw-bold me-2">BRASIL</span>
+      <span class="text-white-50">| Ministério da Gestão e da Inovação em Serviços Públicos</span>
+    </div>
+    <div>
+      <a href="https://www.gov.br/transferegov/pt-br" target="_blank" rel="noopener noreferrer" class="badge bg-warning text-dark text-decoration-none">
+        <i class="bi bi-box-arrow-up-right me-1" aria-hidden="true"></i>Acessar o Transferegov.br
+      </a>
+    </div>
+  </div>
+
+  <!-- Cabeçalho Principal -->
+  <header class="portal-header py-4 px-3" role="banner">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <div class="d-flex align-items-center gap-3">
+            <div class="bg-white p-2 rounded shadow-sm text-primary d-none d-sm-block">
+              <i class="bi bi-credit-card-2-front-fill fs-2" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h1 class="brand-title mb-1">Mentor de Pagamentos da Parceria (OPP)</h1>
+              <p class="brand-subtitle mb-0">Encontre a solução rápida para o que você precisa executar agora no Transferegov.br</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+          <span class="badge bg-warning text-dark px-3 py-2 fs-6 shadow-sm">
+            <i class="bi bi-shield-lock-fill me-1" aria-hidden="true"></i> Conta Gov.br Nível Ouro
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ALERTA CRÍTICO GLOBAL: PRAZO DAS 20H00 -->
+  <aside class="container my-3" aria-label="Aviso Crítico de Horário">
+    <div class="critical-deadline-banner d-flex align-items-center justify-content-between flex-wrap gap-2">
+      <div class="d-flex align-items-center gap-2">
+        <span class="critical-deadline-badge"><i class="bi bi-clock-fill"></i> PRAZO CRÍTICO: 20H00</span>
+        <span class="fw-semibold">O Ordenador de Despesas deve autorizar o pagamento no aplicativo ou internet banking até as 20h00 do mesmo dia.</span>
+      </div>
+      <small class="text-muted d-none d-md-inline">Horário no Transferegov: 07h00 às 19h30</small>
+    </div>
+  </aside>
+
+  <!-- ====================================================================
+       CAMADA DE ARQUITETURA: ENTRADA POR TRIAGEM DE INTENÇÕES (TRIAGE)
+       "O que você quer fazer agora?"
+       ==================================================================== -->
+  <section class="triage-section py-4" aria-labelledby="triageHeading">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 id="triageHeading" class="h4 fw-bold text-primary mb-1">O que você quer fazer hoje?</h2>
+        <p class="text-muted mb-0">Selecione o seu objetivo para ver o passo a passo exato e praticar antes de fazer no sistema real.</p>
+      </div>
+
+      <div class="row g-3" role="tablist" aria-label="Opções de intenção de pagamento">
+        <!-- Intenção 1: Criar Pagamento -->
+        <div class="col-md-4">
+          <div class="triage-card active" data-intention="criar" role="tab" tabindex="0" aria-selected="true" aria-controls="panel-criar">
+            <div>
+              <div class="triage-icon text-primary"><i class="bi bi-file-earmark-plus-fill"></i></div>
+              <h3 class="h5 fw-bold text-primary mb-2">Criar Ordem de Pagamento</h3>
+              <p class="small text-muted mb-3">Emitir um pagamento por Pix Agência/Conta ou Boleto e anexar a Nota Fiscal.</p>
+            </div>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <span class="badge bg-primary-subtle text-primary">Inclusão</span>
+              <span class="fw-semibold small text-primary">Acessar tarefas <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Intenção 2: Autorizar Pagamento -->
+        <div class="col-md-4">
+          <div class="triage-card" data-intention="autorizar" role="tab" tabindex="0" aria-selected="false" aria-controls="panel-autorizar">
+            <div>
+              <div class="triage-icon text-success"><i class="bi bi-check2-circle"></i></div>
+              <h3 class="h5 fw-bold text-success mb-2">Autorizar Pagamento</h3>
+              <p class="small text-muted mb-3">Aprovar a ordem de pagamento no Transferegov ou confirmar no banco até 20h.</p>
+            </div>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <span class="badge bg-success-subtle text-success">Gestor e Ordenador</span>
+              <span class="fw-semibold small text-success">Acessar tarefas <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Intenção 3: Resolver Erro ou Excluir -->
+        <div class="col-md-4">
+          <div class="triage-card" data-intention="resolver" role="tab" tabindex="0" aria-selected="false" aria-controls="panel-resolver">
+            <div>
+              <div class="triage-icon text-danger"><i class="bi bi-tools"></i></div>
+              <h3 class="h5 fw-bold text-danger mb-2">Resolver Erro ou Excluir</h3>
+              <p class="small text-muted mb-3">Excluir ordem incorreta, entender recusas ou regularizar poupança no Banco do Brasil.</p>
+            </div>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <span class="badge bg-danger-subtle text-danger">Correções</span>
+              <span class="fw-semibold small text-danger">Acessar tarefas <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       CONTEÚDO DAS INTENÇÕES (PAINÉIS DE TAREFAS ACIONÁVEIS)
+       ==================================================================== -->
+  <main id="conteudo-principal" class="container py-4 my-2" role="main">
+
+    <!-- Busca Rápida de Procedimentos -->
+    <div class="row justify-content-between align-items-center mb-4 g-3">
+      <div class="col-md-6">
+        <h3 class="h5 fw-bold text-primary mb-0">Tarefas e Guias Práticos</h3>
+        <small class="text-muted">Aprenda na simulação guiada antes de realizar no sistema real.</small>
+      </div>
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-search"></i></span>
+          <input type="search" id="searchTasksInput" class="form-control border-start-0" placeholder="Buscar por Pix, Boleto, Autorização ou Banco...">
+        </div>
+      </div>
+    </div>
+
+    <div id="noResultsAlert" class="alert alert-warning d-none text-center shadow-sm" role="alert">
+      <i class="bi bi-exclamation-triangle-fill me-2" aria-hidden="true"></i>
+      Nenhum procedimento encontrado com o termo pesquisado.
+    </div>
+
+    <div id="intentionContentArea">
+
+      <!-- PAINEL 1: INTENÇÃO CRIAR PAGAMENTO -->
+      <div id="panel-criar" class="intention-panel">
+        <div class="card content-card mb-4">
+          <div class="card-header bg-white py-3 border-bottom d-flex align-items-center justify-content-between">
+            <h4 class="h6 fw-bold text-primary mb-0"><i class="bi bi-file-earmark-plus me-2"></i>Tarefas para: Criar Ordem de Pagamento</h4>
+            <span class="badge bg-primary">Ação de Inclusão</span>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover table-tasks align-middle mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col" style="width: 45%;">O que você faz</th>
+                    <th scope="col" style="width: 25%;">Quem tem permissão</th>
+                    <th scope="col" style="width: 15%;">Tempo de Prática</th>
+                    <th scope="col" style="width: 15%;" class="text-center">Ação</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="task-row">
+                    <td>
+                      <div class="fw-bold text-primary task-title">Criar Ordem de Pagamento por "Pix Agência e Conta"</div>
+                      <small class="text-muted task-tags">Transferência direta, dados bancários do credor, anexo de Nota Fiscal</small>
+                    </td>
+                    <td><span class="badge bg-secondary-subtle text-dark">Operador ou Gestor Financeiro</span></td>
+                    <td><i class="bi bi-clock me-1 text-muted"></i>3 min</td>
+                    <td class="text-center">
+                      <a href="opp_emissao.html" class="btn btn-primary btn-sm fw-semibold">
+                        Praticar Agora <i class="bi bi-chevron-right ms-1"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr class="task-row">
+                    <td>
+                      <div class="fw-bold text-primary task-title">Criar Ordem de Pagamento por "Boleto Bancário / Código de Barras"</div>
+                      <small class="text-muted task-tags">Boleto, linha digitável, acréscimo legal por vencimento, comprovação</small>
+                    </td>
+                    <td><span class="badge bg-secondary-subtle text-dark">Operador ou Gestor Financeiro</span></td>
+                    <td><i class="bi bi-clock me-1 text-muted"></i>4 min</td>
+                    <td class="text-center">
+                      <a href="opp_emissao.html?tipo=boleto" class="btn btn-outline-primary btn-sm fw-semibold">
+                        Praticar Agora <i class="bi bi-chevron-right ms-1"></i>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAINEL 2: INTENÇÃO AUTORIZAR PAGAMENTO -->
+      <div id="panel-autorizar" class="intention-panel d-none">
+        <div class="card content-card mb-4">
+          <div class="card-header bg-white py-3 border-bottom d-flex align-items-center justify-content-between">
+            <h4 class="h6 fw-bold text-success mb-0"><i class="bi bi-check2-circle me-2"></i>Tarefas para: Autorizar Pagamento</h4>
+            <span class="badge bg-success">Aprovações</span>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover table-tasks align-middle mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col" style="width: 45%;">O que você faz</th>
+                    <th scope="col" style="width: 25%;">Quem tem permissão</th>
+                    <th scope="col" style="width: 15%;">Tempo de Prática</th>
+                    <th scope="col" style="width: 15%;" class="text-center">Ação</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="task-row">
+                    <td>
+                      <div class="fw-bold text-success task-title">Autorizar como Gestor Financeiro (GF) no Transferegov</div>
+                      <small class="text-muted task-tags">Conferir nota fiscal e aprovar para liberar para o Ordenador</small>
+                    </td>
+                    <td><span class="badge bg-success-subtle text-success border">Gestor Financeiro (GF)</span></td>
+                    <td><i class="bi bi-clock me-1 text-muted"></i>2 min</td>
+                    <td class="text-center">
+                      <a href="opp_emissao.html?fase=gf" class="btn btn-success btn-sm fw-semibold">
+                        Praticar Agora <i class="bi bi-chevron-right ms-1"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr class="task-row">
+                    <td>
+                      <div class="fw-bold text-success task-title">Autorizar como Ordenador de Despesas (OD) no Transferegov</div>
+                      <small class="text-muted task-tags">Assinatura no sistema governamental antes do envio ao banco</small>
+                    </td>
+                    <td><span class="badge bg-success-subtle text-success border">Ordenador de Despesas (OD)</span></td>
+                    <td><i class="bi bi-clock me-1 text-muted"></i>2 min</td>
+                    <td class="text-center">
+                      <a href="opp_emissao.html?fase=od" class="btn btn-success btn-sm fw-semibold">
+                        Praticar Agora <i class="bi bi-chevron-right ms-1"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr class="task-row bg-warning-subtle">
+                    <td>
+                      <div class="fw-bold text-dark task-title">Autorizar no Aplicativo ou Internet Banking do Banco (Até as 20h00)</div>
+                      <small class="text-muted task-tags">Banco do Brasil ou Caixa, liberação financeira final com token</small>
+                    </td>
+                    <td><span class="badge bg-warning text-dark">OD no Banco</span></td>
+                    <td><i class="bi bi-clock me-1 text-muted"></i>3 min</td>
+                    <td class="text-center">
+                      <a href="opp_emissao.html?fase=banco" class="btn btn-warning btn-sm fw-bold">
+                        Ver Passo a Passo <i class="bi bi-chevron-right ms-1"></i>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAINEL 3: INTENÇÃO RESOLVER ERRO OU EXCLUIR -->
+      <div id="panel-resolver" class="intention-panel d-none">
+        <div class="card content-card mb-4">
+          <div class="card-header bg-white py-3 border-bottom d-flex align-items-center justify-content-between">
+            <h4 class="h6 fw-bold text-danger mb-0"><i class="bi bi-tools me-2"></i>Tarefas para: Resolver Erro ou Excluir</h4>
+            <span class="badge bg-danger">Correção</span>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover table-tasks align-middle mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col" style="width: 45%;">O que você faz</th>
+                    <th scope="col" style="width: 25%;">Quem tem permissão</th>
+                    <th scope="col" style="width: 15%;">Tempo de Prática</th>
+                    <th scope="col" style="width: 15%;" class="text-center">Ação</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="task-row">
+                    <td>
+                      <div class="fw-bold text-danger task-title">Excluir Ordem Incorreta (Antes de ser autorizada)</div>
+                      <small class="text-muted task-tags">Exclusão quando a OPP está na situação "Incluída"</small>
+                    </td>
+                    <td><span class="badge bg-danger-subtle text-danger border">Operador ou Gestor</span></td>
+                    <td><i class="bi bi-clock me-1 text-muted"></i>2 min</td>
+                    <td class="text-center">
+                      <a href="opp_emissao.html?tipo=exclusao" class="btn btn-outline-danger btn-sm fw-semibold">
+                        Praticar Agora <i class="bi bi-chevron-right ms-1"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr class="task-row">
+                    <td>
+                      <div class="fw-bold text-danger task-title">Regularizar Conta Poupança Vinculada (Banco do Brasil)</div>
+                      <small class="text-muted task-tags">Desbloquear saldo da parceria comparecendo à agência do BB</small>
+                    </td>
+                    <td><span class="badge bg-secondary-subtle text-dark">Proponente na Agência</span></td>
+                    <td><i class="bi bi-clock me-1 text-muted"></i>3 min</td>
+                    <td class="text-center">
+                      <a href="opp_emissao.html?fase=regularizacao" class="btn btn-outline-secondary btn-sm fw-semibold">
+                        Ver Orientação <i class="bi bi-chevron-right ms-1"></i>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Rodapé Institucional -->
+  <footer class="portal-footer py-4 mt-auto" role="contentinfo">
+    <div class="container text-center text-md-start">
+      <div class="row align-items-center">
+        <div class="col-md-8 mb-3 mb-md-0">
+          <p class="fw-bold mb-1">Diretoria de Transferências e Parcerias da União (DTPAR)</p>
+          <p class="mb-0 small text-white-50">Ministério da Gestão e da Inovação em Serviços Públicos (MGI) • Fonte Oficial: <a href="https://www.gov.br/transferegov/pt-br" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-underline">Transferegov.br</a></p>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <span class="badge bg-secondary-subtle text-dark p-2">Mentor de Intenções • DTPAR</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

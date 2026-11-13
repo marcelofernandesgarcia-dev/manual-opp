@@ -1,0 +1,419 @@
+/* ==========================================================================
+   PORTAL OPP (DTPAR / TRANSFEREGOV.BR) - MENTOR DE INTENÇÕES
+   Folha de Estilos com Foco em Linguagem Simples e Spotlight Visual
+   Regra: ENCONTRAR > ENTENDER > USAR
+   ========================================================================== */
+
+:root {
+  --dtpar-primary: #0c326f;       /* Azul institucional Gov.br */
+  --dtpar-primary-dark: #071d41;
+  --dtpar-secondary: #1351b4;
+  --dtpar-accent: #2670e8;
+  --dtpar-success: #168821;
+  --dtpar-warning: #ffcd07;
+  --dtpar-danger: #c5221f;
+  --dtpar-bg-light: #f8f9fa;
+  --dtpar-border: #dee2e6;
+  --dtpar-text-main: #212529;
+  --dtpar-text-muted: #555c63;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--dtpar-text-main);
+  background-color: #f4f6f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.55;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* Skip Link para Acessibilidade */
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 10px;
+  background: var(--dtpar-primary-dark);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 9999;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: top 0.2s ease;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 10px;
+  outline: 3px solid var(--dtpar-warning);
+}
+
+/* Barra Institucional Superior */
+.gov-topbar {
+  background-color: #0b1c34;
+  color: #e0e5eb;
+  font-size: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.gov-topbar a {
+  color: #e0e5eb;
+  text-decoration: none;
+}
+.gov-topbar a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* Header Principal */
+.portal-header {
+  background: linear-gradient(135deg, var(--dtpar-primary-dark) 0%, var(--dtpar-primary) 100%);
+  color: #ffffff;
+  border-bottom: 4px solid var(--dtpar-warning);
+}
+
+.portal-header .brand-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.portal-header .brand-subtitle {
+  font-size: 0.95rem;
+  color: #cfddec;
+}
+
+/* Banner de Alerta Crítico das 20h00 */
+.critical-deadline-banner {
+  background: linear-gradient(90deg, #fff3cd 0%, #ffeeba 100%);
+  border: 2px solid #ffc107;
+  border-radius: 8px;
+  padding: 12px 18px;
+  color: #855700;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 6px rgba(255, 193, 7, 0.15);
+}
+
+.critical-deadline-badge {
+  background-color: var(--dtpar-danger);
+  color: #ffffff;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==========================================================================
+   TRIAGEM POR INTENÇÕES DO USUÁRIO (TRIAGE)
+   ========================================================================== */
+.triage-section {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--dtpar-border);
+}
+
+.triage-card {
+  background: #ffffff;
+  border: 2px solid var(--dtpar-border);
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.triage-card:hover,
+.triage-card.active {
+  border-color: var(--dtpar-secondary);
+  background-color: #f8fbff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(12, 50, 111, 0.1);
+}
+
+.triage-card.active {
+  border-color: var(--dtpar-primary);
+  border-width: 2px;
+  background-color: #eef4fc;
+}
+
+.triage-card:focus-visible {
+  outline: 3px solid var(--dtpar-warning);
+}
+
+.triage-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+/* Cartões de Conteúdo Geral */
+.content-card {
+  border: 1px solid var(--dtpar-border);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(12, 50, 111, 0.04);
+  background-color: #ffffff;
+}
+
+/* Caixas de Perguntas Acionáveis */
+.action-question-box {
+  background-color: #ffffff;
+  border: 1px solid var(--dtpar-border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.action-question-header {
+  background-color: #f1f5fa;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dtpar-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--dtpar-border);
+}
+
+.action-question-body {
+  padding: 12px 16px;
+  font-size: 0.92rem;
+}
+
+/* Tabela de Procedimentos da Intenção */
+.table-tasks thead th {
+  background-color: #f1f4f9;
+  color: var(--dtpar-primary-dark);
+  font-weight: 700;
+  border-bottom: 2px solid #cfd7e3;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.table-tasks tbody tr:hover {
+  background-color: #f8fbff;
+}
+
+/* ==========================================================================
+   SIMULADOR PRÁTICO: FEEDBACK DIRECIONAL & SPOTLIGHT
+   Ilumina apenas o botão/campo da ação, escurecendo o restante da tela
+   ========================================================================== */
+
+.simulator-wrapper {
+  background-color: #1a1e24;
+  border: 2px solid #2b323b;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.simulator-window-bar {
+  background-color: #2b323b;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #3c4450;
+}
+
+.window-dots {
+  display: flex;
+  gap: 6px;
+}
+.window-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot-red { background-color: #ff5f56; }
+.dot-yellow { background-color: #ffbd2e; }
+.dot-green { background-color: #27c93f; }
+
+.window-title {
+  color: #d1d5db;
+  font-size: 0.82rem;
+  font-family: monospace;
+}
+
+.instruction-panel {
+  background: linear-gradient(90deg, #0c326f 0%, #174898 100%);
+  color: #ffffff;
+  padding: 14px 20px;
+  border-bottom: 2px solid var(--dtpar-warning);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.instruction-step-badge {
+  background-color: var(--dtpar-warning);
+  color: #0b1c34;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.instruction-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin: 0;
+  flex: 1;
+}
+
+/* VIEWPORT PRINCIPAL (16:9) */
+.simulator-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #000000;
+  user-select: none;
+  overflow: hidden;
+}
+
+.simulator-screen-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* MÁSCARA ESCURA GLOBAL (DIMMER) */
+.simulator-dimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 15, 25, 0.65);
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+/* ÁREA DE FOCO / SPOTLIGHT ILUMINADO
+   Usa box-shadow colossal para criar o recorte de luz preciso */
+.simulator-spotlight {
+  position: absolute;
+  z-index: 25;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 3px solid #ffcd07;
+  box-shadow: 0 0 0 9999px rgba(10, 15, 25, 0.65), 0 0 20px rgba(255, 205, 7, 0.9);
+  transition: all 0.2s ease-in-out;
+  background: transparent;
+  animation: spotlight-pulse 1.8s infinite ease-in-out;
+}
+
+@keyframes spotlight-pulse {
+  0% {
+    box-shadow: 0 0 0 9999px rgba(10, 15, 25, 0.65), 0 0 10px rgba(255, 205, 7, 0.6);
+    border-color: #ffcd07;
+  }
+  50% {
+    box-shadow: 0 0 0 9999px rgba(10, 15, 25, 0.72), 0 0 25px rgba(255, 205, 7, 1);
+    border-color: #ffffff;
+  }
+  100% {
+    box-shadow: 0 0 0 9999px rgba(10, 15, 25, 0.65), 0 0 10px rgba(255, 205, 7, 0.6);
+    border-color: #ffcd07;
+  }
+}
+
+.simulator-spotlight:hover,
+.simulator-spotlight:focus-visible {
+  outline: none;
+  border-color: #27c93f;
+  box-shadow: 0 0 0 9999px rgba(10, 15, 25, 0.75), 0 0 30px rgba(39, 201, 63, 0.9);
+}
+
+/* Tooltip do Botão */
+.spotlight-hint {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffcd07;
+  color: #071d41;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 5px 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  z-index: 30;
+}
+
+.spotlight-hint::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #ffcd07 transparent transparent transparent;
+}
+
+/* Feedback de clique fora (Shake) */
+.simulator-viewport.wrong-click {
+  animation: shake 0.35s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%, 75% { transform: translateX(-8px); }
+  50% { transform: translateX(8px); }
+}
+
+/* Overlay de Conclusão */
+.simulator-overlay-success {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(7, 29, 65, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  padding: 30px;
+  text-align: center;
+  z-index: 40;
+}
+
+/* Rodapé */
+.portal-footer {
+  background-color: #0b1c34;
+  color: #cfddec;
+  font-size: 0.88rem;
+  border-top: 3px solid var(--dtpar-primary);
+}
+
+.portal-footer a {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .portal-header .brand-title {
+    font-size: 1.3rem;
+  }
+  .instruction-panel {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
