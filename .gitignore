@@ -1,0 +1,3 @@
+# Ignore arquivos pesados ou temporarios se necessario
+*.zip
+.system_generated/

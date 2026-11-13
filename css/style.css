@@ -1,0 +1,476 @@
+/* ==========================================================================
+   PORTAL OPP (DTPAR / TRANSFEREGOV.BR) - MENTOR DE INTENÇÕES
+   Folha de Estilos com Telas 100% Claras, Moldura com Leve Neon
+   e Pedagogia em 2 Tempos (Observar Campos -> Agir no Botão)
+   Regra Rígida Global: ENCONTRAR > ENTENDER > USAR
+   ========================================================================== */
+
+:root {
+  --dtpar-primary: #0c326f;       /* Azul institucional Gov.br */
+  --dtpar-primary-dark: #071d41;
+  --dtpar-secondary: #1351b4;
+  --dtpar-accent: #2670e8;
+  --dtpar-neon-glow: rgba(38, 112, 232, 0.45);
+  --dtpar-success: #168821;
+  --dtpar-warning: #ffcd07;
+  --dtpar-danger: #c5221f;
+  --dtpar-bg-light: #f8f9fa;
+  --dtpar-border: #dee2e6;
+  --dtpar-text-main: #212529;
+  --dtpar-text-muted: #555c63;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--dtpar-text-main);
+  background-color: #f4f6f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.55;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* Skip Link para Acessibilidade */
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 10px;
+  background: var(--dtpar-primary-dark);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 9999;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: top 0.2s ease;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 10px;
+  outline: 3px solid var(--dtpar-warning);
+}
+
+/* Barra Institucional Superior */
+.gov-topbar {
+  background-color: #0b1c34;
+  color: #e0e5eb;
+  font-size: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.gov-topbar a {
+  color: #e0e5eb;
+  text-decoration: none;
+}
+.gov-topbar a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* Header Principal */
+.portal-header {
+  background: linear-gradient(135deg, var(--dtpar-primary-dark) 0%, var(--dtpar-primary) 100%);
+  color: #ffffff;
+  border-bottom: 4px solid var(--dtpar-warning);
+}
+
+.portal-header .brand-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.portal-header .brand-subtitle {
+  font-size: 0.95rem;
+  color: #cfddec;
+}
+
+/* Banner de Alerta Crítico das 20h00 */
+.critical-deadline-banner {
+  background: linear-gradient(90deg, #fff3cd 0%, #ffeeba 100%);
+  border: 2px solid #ffc107;
+  border-radius: 8px;
+  padding: 12px 18px;
+  color: #855700;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 6px rgba(255, 193, 7, 0.15);
+}
+
+.critical-deadline-badge {
+  background-color: var(--dtpar-danger);
+  color: #ffffff;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==========================================================================
+   TRIAGEM POR INTENÇÕES DO USUÁRIO (TRIAGE)
+   ========================================================================== */
+.triage-section {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--dtpar-border);
+}
+
+.triage-card {
+  background: #ffffff;
+  border: 2px solid var(--dtpar-border);
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.triage-card:hover,
+.triage-card.active {
+  border-color: var(--dtpar-secondary);
+  background-color: #f8fbff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(12, 50, 111, 0.1);
+}
+
+.triage-card.active {
+  border-color: var(--dtpar-primary);
+  border-width: 2px;
+  background-color: #eef4fc;
+}
+
+.triage-card:focus-visible {
+  outline: 3px solid var(--dtpar-warning);
+}
+
+.triage-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+/* Cartões de Conteúdo Geral */
+.content-card {
+  border: 1px solid var(--dtpar-border);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(12, 50, 111, 0.04);
+  background-color: #ffffff;
+}
+
+/* Caixas de Perguntas Acionáveis */
+.action-question-box {
+  background-color: #ffffff;
+  border: 1px solid var(--dtpar-border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.action-question-header {
+  background-color: #f1f5fa;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dtpar-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--dtpar-border);
+}
+
+.action-question-body {
+  padding: 12px 16px;
+  font-size: 0.92rem;
+}
+
+/* Tabela de Procedimentos da Intenção */
+.table-tasks thead th {
+  background-color: #f1f4f9;
+  color: var(--dtpar-primary-dark);
+  font-weight: 700;
+  border-bottom: 2px solid #cfd7e3;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.table-tasks tbody tr:hover {
+  background-color: #f8fbff;
+}
+
+/* ==========================================================================
+   SIMULADOR PRÁTICO: TELA CLARA, BORDA NEON E PEDAGOGIA EM 2 TEMPOS
+   ========================================================================== */
+
+/* Moldura Externa com Leve Neon Institucional Envolvente */
+.simulator-wrapper {
+  background-color: #ffffff;
+  border: 2px solid #1351b4;
+  border-radius: 12px;
+  overflow: hidden;
+  /* Brilho neon suave e elegante em tom azul institucional */
+  box-shadow: 0 0 22px var(--dtpar-neon-glow), 0 8px 32px rgba(12, 50, 111, 0.18);
+  transition: box-shadow 0.3s ease;
+}
+
+.simulator-wrapper:hover {
+  box-shadow: 0 0 28px rgba(38, 112, 232, 0.6), 0 10px 36px rgba(12, 50, 111, 0.22);
+}
+
+/* Barra do Navegador Simulado */
+.simulator-window-bar {
+  background-color: #0b1c34;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #1a355d;
+}
+
+.window-dots {
+  display: flex;
+  gap: 6px;
+}
+.window-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot-red { background-color: #ff5f56; }
+.dot-yellow { background-color: #ffbd2e; }
+.dot-green { background-color: #27c93f; }
+
+.window-title {
+  color: #d1d5db;
+  font-size: 0.82rem;
+  font-family: monospace;
+}
+
+/* Painel de Instruções Superior */
+.instruction-panel {
+  background: linear-gradient(90deg, #0c326f 0%, #174898 100%);
+  color: #ffffff;
+  padding: 14px 20px;
+  border-bottom: 2px solid var(--dtpar-warning);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.instruction-step-badge {
+  background-color: var(--dtpar-warning);
+  color: #0b1c34;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.instruction-phase-indicator {
+  font-size: 0.78rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.phase-observe {
+  background-color: #e8f0fe;
+  color: #1351b4;
+  border: 1px solid #b8d5fb;
+}
+.phase-act {
+  background-color: #e6f4ea;
+  color: #137333;
+  border: 1px solid #a8dab5;
+}
+
+.instruction-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin: 0;
+  flex: 1;
+}
+
+/* VIEWPORT PRINCIPAL 100% CLARO E NÍTIDO (16:9) */
+.simulator-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #ffffff; /* Fundo branco e claro */
+  user-select: none;
+  overflow: hidden;
+}
+
+.simulator-screen-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: brightness(1.02) contrast(1.02); /* Garantia de clareza e nitidez */
+}
+
+/* ==========================================================================
+   TEMPO 1: DESTAQUE DOS CAMPOS PREENCHIDOS (OBSERVAR)
+   A tela permanece clara; apenas uma moldura suave guia o olhar para os dados
+   ========================================================================== */
+.fields-preview-box {
+  position: absolute;
+  z-index: 20;
+  border-radius: 8px;
+  border: 2px solid #1351b4;
+  background: rgba(19, 81, 180, 0.06); /* Leve transparência para indicar a área */
+  box-shadow: 0 0 15px rgba(19, 81, 180, 0.35);
+  pointer-events: none;
+  animation: fields-glow 1.6s infinite ease-in-out;
+  transition: opacity 0.3s ease;
+}
+
+@keyframes fields-glow {
+  0% { border-color: #1351b4; box-shadow: 0 0 10px rgba(19, 81, 180, 0.25); }
+  50% { border-color: #2670e8; box-shadow: 0 0 18px rgba(38, 112, 232, 0.5); }
+  100% { border-color: #1351b4; box-shadow: 0 0 10px rgba(19, 81, 180, 0.25); }
+}
+
+.fields-preview-hint {
+  position: absolute;
+  top: -12px;
+  left: 16px;
+  background-color: #0c326f;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* ==========================================================================
+   TEMPO 2: DESTAQUE DO BOTÃO DE AÇÃO (AGIR / AVANÇAR)
+   ========================================================================== */
+.simulator-action-btn {
+  position: absolute;
+  z-index: 25;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 3px solid #ffcd07;
+  background: rgba(255, 205, 7, 0.15);
+  box-shadow: 0 0 16px rgba(255, 205, 7, 0.9), 0 0 30px rgba(255, 205, 7, 0.4);
+  transition: all 0.2s ease-in-out;
+  animation: action-btn-pulse 1.6s infinite ease-in-out;
+}
+
+@keyframes action-btn-pulse {
+  0% {
+    border-color: #ffcd07;
+    box-shadow: 0 0 12px rgba(255, 205, 7, 0.8), 0 0 22px rgba(255, 205, 7, 0.3);
+  }
+  50% {
+    border-color: #ffffff;
+    box-shadow: 0 0 22px rgba(255, 205, 7, 1), 0 0 35px rgba(255, 205, 7, 0.6);
+  }
+  100% {
+    border-color: #ffcd07;
+    box-shadow: 0 0 12px rgba(255, 205, 7, 0.8), 0 0 22px rgba(255, 205, 7, 0.3);
+  }
+}
+
+.simulator-action-btn:hover,
+.simulator-action-btn:focus-visible {
+  outline: none;
+  border-color: #168821;
+  background: rgba(22, 136, 33, 0.2);
+  box-shadow: 0 0 24px rgba(22, 136, 33, 0.9), 0 0 40px rgba(22, 136, 33, 0.4);
+}
+
+/* Tooltip do Botão */
+.action-btn-hint {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0b1c34;
+  color: #ffcd07;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 5px 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  border: 1px solid rgba(255, 205, 7, 0.4);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 30;
+}
+
+.action-btn-hint::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #0b1c34 transparent transparent transparent;
+}
+
+/* Feedback de clique fora (Shake suave) */
+.simulator-viewport.wrong-click {
+  animation: shake 0.35s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%, 75% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+}
+
+/* Overlay de Conclusão */
+.simulator-overlay-success {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(7, 29, 65, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  padding: 30px;
+  text-align: center;
+  z-index: 40;
+}
+
+/* Rodapé */
+.portal-footer {
+  background-color: #0b1c34;
+  color: #cfddec;
+  font-size: 0.88rem;
+  border-top: 3px solid var(--dtpar-primary);
+}
+
+.portal-footer a {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .portal-header .brand-title {
+    font-size: 1.3rem;
+  }
+  .instruction-panel {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
