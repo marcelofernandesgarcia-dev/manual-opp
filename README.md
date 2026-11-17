@@ -2,6 +2,18 @@
 
 Portal estático, responsivo e acessível (WCAG 2.1 AA) para capacitação e micro-learning operacional do módulo de **Ordens de Pagamento das Parcerias (OPP)** do Transferegov.br.
 
+🌐 **Acesso em Produção (GitHub Pages):**  
+👉 [https://marcelofernandesgarcia-dev.github.io/manual-opp/](https://marcelofernandesgarcia-dev.github.io/manual-opp/)  
+*(Protegido com diretiva `noindex, nofollow` para privacidade contra robôs de busca).*
+
+---
+
+## 🚀 Versão 2.1 (Novidades e Mobile UX)
+- **49 Lâminas Oficiais DTPAR:** 100% integradas e navegáveis em alta definição.
+- **Ergonomia Mobile (WCAG 2.5.5):** Hitbox tátil de 48px, carrossel de trilhas deslizante e aviso animado de rotação de tela.
+- **Modo Tela Cheia:** Botão de visualização imersiva para celulares em modo paisagem e apresentações em monitores.
+- **Zero Dependências:** 100% estático (HTML5, CSS3, Vanilla JS), seguro e imune a bloqueios de rede.
+
 ---
 
 ## 📁 Estrutura de Pastas
