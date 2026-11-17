@@ -560,3 +560,115 @@ main {
     padding: 18px 16px;
   }
 }
+
+/* ==========================================================================
+   AVISO VISUAL INTUITIVO E ANIMADO DE ROTAÇÃO DE TELA (MOBILE)
+   ========================================================================== */
+.rotate-screen-notice {
+  background: linear-gradient(135deg, #eef4ff 0%, #ffffff 100%);
+  border: 2px solid #0050ff;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin: 12px 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 4px 14px rgba(0, 80, 255, 0.18);
+  animation: notice-pulse 2.2s infinite ease-in-out;
+}
+
+@keyframes notice-pulse {
+  0% { box-shadow: 0 2px 8px rgba(0, 80, 255, 0.15); border-color: #0050ff; }
+  50% { box-shadow: 0 6px 18px rgba(0, 80, 255, 0.35); border-color: #ffcd07; }
+  100% { box-shadow: 0 2px 8px rgba(0, 80, 255, 0.15); border-color: #0050ff; }
+}
+
+.rotate-phone-anim {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background-color: #0c326f;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  animation: phone-wiggle 2.6s infinite ease-in-out;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+@keyframes phone-wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(0deg); }
+  50% { transform: rotate(90deg); }
+  75% { transform: rotate(90deg); }
+  90% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.rotate-arrow-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  font-size: 0.8rem;
+  color: #0c326f;
+  background: #ffcd07;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.rotate-screen-content {
+  flex: 1;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  color: #1e293b;
+}
+
+.rotate-screen-title {
+  font-weight: 700;
+  color: #0c326f;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.rotate-screen-desc {
+  margin: 0;
+  color: #475569;
+}
+
+.btn-close-notice {
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  color: #475569;
+  font-size: 1rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+.btn-close-notice:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* Quando o usuário virar o aparelho na horizontal (landscape), o aviso some automaticamente */
+@media (orientation: landscape) {
+  .rotate-screen-notice {
+    display: none !important;
+  }
+}

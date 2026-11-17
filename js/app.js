@@ -773,5 +773,14 @@ function initSimulator() {
     document.addEventListener('webkitfullscreenchange', updateFullscreenBtnState);
   }
 
+  // Fechar o aviso de rotação de tela quando o usuário clicar no 'X'
+  const btnDismissRotate = document.getElementById('btnDismissRotate');
+  const rotateNotice = document.getElementById('rotateScreenNotice');
+  if (btnDismissRotate && rotateNotice) {
+    btnDismissRotate.addEventListener('click', () => {
+      rotateNotice.style.display = 'none';
+    });
+  }
+
   renderStep(0);
 }

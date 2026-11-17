@@ -90,6 +90,26 @@
 
   <main id="conteudo-simulador" class="container py-1 mb-4" role="main">
 
+    <!-- AVISO VISUAL INTUITIVO E ANIMADO DE ROTAÇÃO DE TELA (APENAS SMARTPHONES EM MODO RETRATO) -->
+    <div id="rotateScreenNotice" class="rotate-screen-notice d-md-none" role="alert" aria-live="polite">
+      <div class="rotate-phone-anim" aria-hidden="true">
+        <i class="bi bi-phone"></i>
+        <span class="rotate-arrow-badge"><i class="bi bi-arrow-repeat"></i></span>
+      </div>
+      <div class="rotate-screen-content">
+        <div class="rotate-screen-title">
+          <span>Gire o celular de lado</span>
+          <span class="badge bg-warning text-dark px-2 py-0" style="font-size: 0.7rem;">Tela Cheia</span>
+        </div>
+        <p class="rotate-screen-desc">
+          Vire o aparelho na <strong>horizontal</strong> para ler todos os campos e valores do Transferegov com nitidez.
+        </p>
+      </div>
+      <button type="button" class="btn-close-notice" id="btnDismissRotate" aria-label="Fechar aviso">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+
     <!-- SIMULADOR COM TELA 100% CLARA, BORDA NEON E PEDAGOGIA EM 2 TEMPOS -->
     <section class="card content-card mb-4" aria-labelledby="simuladorHeading">
       <div class="card-header bg-white border-bottom py-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
@@ -99,7 +119,6 @@
             Simulador Prático Transferegov.br
           </h2>
           <small class="text-muted">A tela mostra primeiro os dados preenchidos para conferência e, em seguida, ilumina o botão para avançar.</small>
-          <div class="d-md-none mt-1 text-primary small fw-semibold"><i class="bi bi-phone-landscape me-1"></i> Dica: No celular, gire na horizontal para ver os detalhes em tela cheia.</div>
         </div>
         <div class="d-flex align-items-center gap-2">
           <button id="btnPrevStep" class="btn btn-sm btn-outline-secondary" type="button" disabled aria-label="Retornar ao passo anterior">
