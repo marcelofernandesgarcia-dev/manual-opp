@@ -740,5 +740,38 @@ function initSimulator() {
     });
   }
 
+  // Controle de Tela Cheia / Modo Imersivo para Smartphones e Apresentações
+  const btnFullscreen = document.getElementById('btnToggleFullscreen');
+  if (btnFullscreen) {
+    btnFullscreen.addEventListener('click', () => {
+      const targetWrapper = document.querySelector('.simulator-wrapper') || simulatorViewport;
+      if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        if (targetWrapper.requestFullscreen) {
+          targetWrapper.requestFullscreen().catch(() => {});
+        } else if (targetWrapper.webkitRequestFullscreen) {
+          targetWrapper.webkitRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen().catch(() => {});
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        }
+      }
+    });
+
+    const updateFullscreenBtnState = () => {
+      const isFs = !!(document.fullscreenElement || document.webkitFullscreenElement);
+      if (isFs) {
+        btnFullscreen.innerHTML = '<i class="bi bi-fullscreen-exit me-1"></i> <span class="d-none d-sm-inline">Sair</span>';
+      } else {
+        btnFullscreen.innerHTML = '<i class="bi bi-arrows-fullscreen me-1"></i> <span class="d-none d-sm-inline">Tela Cheia</span>';
+      }
+    };
+
+    document.addEventListener('fullscreenchange', updateFullscreenBtnState);
+    document.addEventListener('webkitfullscreenchange', updateFullscreenBtnState);
+  }
+
   renderStep(0);
 }

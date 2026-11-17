@@ -465,12 +465,98 @@ main {
   color: #ffffff;
 }
 
+/* Touch Target com hitbox mínima de 48x48px (WCAG 2.5.5 - Elimina falsos cliques no mobile) */
+.simulator-action-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 48px;
+  min-height: 48px;
+  width: max(100%, 48px);
+  height: max(100%, 48px);
+  pointer-events: auto;
+}
+
+/* Botão de Tela Cheia / Modo Paisagem */
+.btn-fullscreen-toggle {
+  background: #ffffff;
+  color: #0c326f;
+  border: 1px solid #cfddec;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+.btn-fullscreen-toggle:hover {
+  background: #004f9f;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   REGRAS RESPONSIVAS MOBILE (APENAS PARA TELAS < 768px)
+   O USO E VISUAL NO PC / DESKTOP PERMANECEM 100% INTACTOS
+   ========================================================================== */
 @media (max-width: 768px) {
   .portal-header .brand-title {
     font-size: 1.3rem;
   }
+  
+  /* Seletor de Trilhas com rolagem horizontal deslizante (Carrossel Touch) */
+  .sim-track-scroll-container {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+    gap: 8px;
+  }
+  .sim-track-scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+  .sim-track-scroll-container .sim-nav-pill {
+    flex: 0 0 auto;
+    font-size: 0.82rem;
+    padding: 6px 12px;
+    white-space: nowrap;
+  }
+
+  /* Painel de Instruções Fixo (Sticky) para não perder o foco ao rolar */
   .instruction-panel {
+    position: sticky;
+    top: 0;
+    z-index: 35;
     flex-direction: column;
     align-items: flex-start;
+    padding: 10px 14px;
+    border-radius: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+  .instruction-text {
+    font-size: 0.92rem;
+    line-height: 1.35;
+  }
+
+  /* Tooltips com largura segura para não cortar nas bordas do celular */
+  .action-btn-hint {
+    font-size: 0.72rem;
+    padding: 4px 8px;
+    max-width: 180px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  /* Prevenção de Auto-Zoom no Safari do iPhone (inputs com 16px) */
+  input[type="text"],
+  input[type="search"],
+  .form-control {
+    font-size: 16px !important;
+  }
+
+  /* Otimização dos Cards de Intenção para toque confortável no smartphone */
+  .intent-card {
+    min-height: auto;
+    padding: 18px 16px;
   }
 }

@@ -69,16 +69,16 @@
   <!-- SELETOR DINÂMICO DE TRILHAS NO TOPO DO SIMULADOR -->
   <section class="container mb-3" aria-label="Seletor de Trilhas">
     <div class="bg-white p-2 rounded border shadow-sm d-flex flex-wrap gap-2 align-items-center justify-content-between">
-      <div class="d-flex align-items-center gap-1 flex-wrap">
+      <div class="d-flex align-items-center gap-1 flex-wrap sim-track-scroll-container">
         <span class="small fw-bold text-muted me-2"><i class="bi bi-compass me-1"></i>Trilha Ativa:</span>
-        <a href="opp_emissao.html?tipo=pix" class="btn btn-sm btn-outline-primary sim-nav-pill active" data-tipo="pix">
-          <i class="bi bi-credit-card-2-front me-1"></i> 1. Pix Agência/Conta (7 passos)
+        <a href="opp_emissao.html?tipo=login" class="btn btn-sm btn-outline-primary sim-nav-pill" data-tipo="login">
+          <i class="bi bi-key me-1"></i> 1. Primeiro Acesso (5 passos)
+        </a>
+        <a href="opp_emissao.html?tipo=pix" class="btn btn-sm btn-outline-primary sim-nav-pill" data-tipo="pix">
+          <i class="bi bi-credit-card-2-front me-1"></i> 2. Pix Agência/Conta (7 passos)
         </a>
         <a href="opp_emissao.html?tipo=boleto" class="btn btn-sm btn-outline-primary sim-nav-pill" data-tipo="boleto">
-          <i class="bi bi-upc-scan me-1"></i> 2. Boleto Bancário (5 passos)
-        </a>
-        <a href="opp_emissao.html?tipo=login" class="btn btn-sm btn-outline-primary sim-nav-pill" data-tipo="login">
-          <i class="bi bi-key me-1"></i> 3. Login & Acesso (5 passos)
+          <i class="bi bi-upc-scan me-1"></i> 3. Boleto Bancário (5 passos)
         </a>
         <a href="opp_emissao.html?tipo=erros" class="btn btn-sm btn-outline-danger sim-nav-pill" data-tipo="erros">
           <i class="bi bi-exclamation-triangle me-1"></i> 4. Erros e Exclusão (3 passos)
@@ -107,6 +107,9 @@
           </button>
           <button id="btnRestartSimulation" class="btn btn-sm btn-outline-primary" type="button" aria-label="Reiniciar simulação">
             <i class="bi bi-arrow-clockwise me-1"></i> Recomeçar
+          </button>
+          <button id="btnToggleFullscreen" class="btn btn-sm btn-fullscreen-toggle" type="button" aria-label="Expandir simulador para tela cheia">
+            <i class="bi bi-arrows-fullscreen me-1"></i> <span class="d-none d-sm-inline">Tela Cheia</span>
           </button>
         </div>
       </div>
